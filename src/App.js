@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-import ConvertTime from "./ConvertTime";
+import ConvertTime from "./components/ConvertTime";
 import "./App.css";
 import { Link } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import getHost from "./components/Host";
-import LoadingSpinner from "./components/LoadingSpinner";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 
 const App = () => {
   const [loading, setLoading] = useState(false);

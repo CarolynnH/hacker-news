@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Comments.css";
 import { useParams } from "react-router-dom";
-import ConvertTime from "./ConvertTime";
-import Navbar from "./components/Navbar";
+import ConvertTime from "./components/ConvertTime";
+import Navbar from "./components/Navbar/Navbar";
 import getHost from "./components/Host";
 import parse from "html-react-parser";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
-import LoadingSpinner from "./components/LoadingSpinner";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 const Comment = ({ commentID }) => {
   const [loading, setLoading] = useState(false);
   const [comment, setComment] = useState(null);
@@ -20,7 +20,6 @@ const Comment = ({ commentID }) => {
           `https://hacker-news.firebaseio.com/v0/item/${commentID}.json?printpretty`
         );
         const data = await response.json();
-        console.log(data);
         setComment(data);
       } catch (error) {
         console.error("Error fetching comment data", error);
